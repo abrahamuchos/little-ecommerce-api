@@ -27,6 +27,10 @@ class Attribute extends Model
 {
     use HasFactory;
 
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
     protected $fillable = [
         'attribute_id',
         'name',

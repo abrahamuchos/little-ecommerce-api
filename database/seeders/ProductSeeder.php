@@ -23,7 +23,6 @@ class ProductSeeder extends Seeder
         $suppliers = User::whereHas('roles', function (Builder $query) {
             $query->where('id', '=', User::IS_SUPPLIER);
         })->get(['id']);
-
         // Get all subcategories
         $powerToolCategory = Category::where('category_id', 1)->get();
         $accessoriesCategory = Category::where('category_id', 6)->get();
