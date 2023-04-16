@@ -18,9 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->float('price');
+            $table->float('total');
             $table->string('charger_id', 255)
-                ->comment('Id de la transaccion en stripe');
+                    ->comment('Id de la transaccion en stripe');
             $table->timestamps();
         });
     }

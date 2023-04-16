@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('attribute_id')->constrained()
+            $table->foreignId('attribute_id')->nullable()->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('name', 255);
