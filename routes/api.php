@@ -17,16 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::get('products/guest', [ProductController::class, 'index']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
 //    Route::get('products', [ProductController::class, 'index'])->can('viewAny',Product::class);
-    Route::get('products', [ProductController::class, 'index']);
-
+    Route::get('products', [ProductController::class, 'allProducts']);
+    Route::get('products/category/{category}', [ProductController::class, 'showByCategory']);
+    Route::post('products', [ProductController::class, 'store']);
+    Route::get('products/{id}', [ProductController::class, 'show']);
+    Route::put('products/{product}', [ProductController::class, 'update']); //product == id
+    Route::patch('products/{product}', [ProductController::class, 'available']); //product == id
 });
