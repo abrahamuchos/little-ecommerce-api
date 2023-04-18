@@ -2,16 +2,14 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use JsonSerializable;
 
 /**
  * @property int             $id
  * @property string          $name
  * @property string          $email
- * @property App\Models\User $roles
+ * @property \App\Models\User $roles
  */
 class UserResource extends JsonResource
 {
