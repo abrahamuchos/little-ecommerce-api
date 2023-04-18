@@ -86,5 +86,4 @@ class AuthController extends Controller
         return $user->createToken('auth_token')->plainTextToken;
     }
 
-
 }
